@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9F48DB332629ECCF003C5F0C /* FriendsNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F48DB322629ECCF003C5F0C /* FriendsNavigationController.swift */; };
+		9F5843F82630205300442031 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5843F72630205300442031 /* Session.swift */; };
 		9F5F1A7E262043370057D643 /* Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5F1A7D262043370057D643 /* Animations.swift */; };
 		9F5F1A8126206BB10057D643 /* MassageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5F1A8026206BB10057D643 /* MassageButton.swift */; };
 		9F5F1A8626206DCC0057D643 /* RepostButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5F1A8526206DCC0057D643 /* RepostButton.swift */; };
@@ -44,6 +45,7 @@
 
 /* Begin PBXFileReference section */
 		9F48DB322629ECCF003C5F0C /* FriendsNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FriendsNavigationController.swift; path = ../../FriendsNavigationController.swift; sourceTree = "<group>"; };
+		9F5843F72630205300442031 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		9F5F1A7D262043370057D643 /* Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animations.swift; sourceTree = "<group>"; };
 		9F5F1A8026206BB10057D643 /* MassageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MassageButton.swift; sourceTree = "<group>"; };
 		9F5F1A8526206DCC0057D643 /* RepostButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepostButton.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 				9F48DB322629ECCF003C5F0C /* FriendsNavigationController.swift */,
 				9FB00A712604C271008D1FC2 /* ViewController.swift */,
 				9FB00A3825FA5AF3008D1FC2 /* FriendsTableViewController.swift */,
+				9F5843F72630205300442031 /* Session.swift */,
 				9F724071261475F000983C06 /* User.swift */,
 			);
 			path = Friends;
@@ -270,6 +273,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9FB00A6F2604AE35008D1FC2 /* imageWithShadow.swift in Sources */,
+				9F5843F82630205300442031 /* Session.swift in Sources */,
 				9F7055AA25F6BCAE00D9910F /* ProfileTableViewController.swift in Sources */,
 				9F6582D22615CB5900F749C5 /* NewsTableViewCell.swift in Sources */,
 				9FB00A2E25FA492F008D1FC2 /* PhotosCollectionViewCell.swift in Sources */,
