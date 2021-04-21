@@ -11,7 +11,7 @@ import Foundation
    static let shared = Session()
     
    var token = ""
-   var userldn = Int()
+   var userld = Int()
     
     private init() {
         
