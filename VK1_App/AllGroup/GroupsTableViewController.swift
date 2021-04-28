@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class GroupsTableViewController: UITableViewController {
     var communitys = [Community]()
@@ -13,6 +14,18 @@ class GroupsTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        AF.request("https://api.vk.com/method/groups.get",
+                   parameters: [
+                    "access_token" : Session.shared.token,
+                    "user_id" : Session.shared.userId,
+                    "extended" : "1",
+                    "fields" : "city, description, members_counts",
+                    "v" : "5.68"
+                   ]).responseJSON {
+                    response in
+                    print(response.value)
+                   }
 }
     
     // MARK: - Table view data source

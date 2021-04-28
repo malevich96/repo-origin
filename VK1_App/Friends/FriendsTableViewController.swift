@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class FriendsTableViewController: UITableViewController  {
     
@@ -30,6 +31,20 @@ class FriendsTableViewController: UITableViewController  {
     
         override func viewDidLoad() {
             super.viewDidLoad()
+            
+            AF.request("https://api.vk.com/method/friends.get",
+                       parameters: [
+                       "access_token" : Session.shared.token,
+                       "user_id" : Session.shared.userId,
+                       "order" : "name",
+                       "fiends" : "nickname",
+                       "v" : "5.68"
+                       ]).responseJSON {
+                        response in
+                        print(response.value)
+                       }
+            
+            
     
         let friend = User(name: "Андрей", age: 39, numberOfFollowers: 5, avatarImageName: "image1", imageView: ["images1","images3","images5","images4","images2","images6"])
         let friend1 = User (name: "Анатолий", age: 9, numberOfFollowers: 5, avatarImageName: "image2", imageView: ["images2","images4","images6"])

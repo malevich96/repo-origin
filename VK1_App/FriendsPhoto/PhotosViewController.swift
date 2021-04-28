@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class PhotosViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
    
@@ -23,7 +24,22 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     override func viewDidLoad(){
         super.viewDidLoad()
+        
+        AF.request("https://api.vk.com/method/photos.getAll",
+                   parameters: [
+                    "access_token" : Session.shared.token,
+                    "user_id" : Session.shared.userId,
+                    "owner_id" : "0",
+                    "extended" : "1",
+                    "count" : "4",
+                    "no_service_albums" : "0",
+                    "v" : "5.68"
+                   ]).responseJSON {
+                    response in
+                    print(response.value)
+                   }
     }
+    
     
     func numberOfSections(in colllectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
