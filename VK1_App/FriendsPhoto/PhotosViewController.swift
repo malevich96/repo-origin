@@ -7,10 +7,11 @@
 
 import UIKit
 import Alamofire
+import AlamofireImage
 
 class PhotosViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
    
-    var user: User?
+    var user: VKUser?
     var photos = [UIImage]()
     var selectedIndex = 0
     
@@ -24,20 +25,7 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     override func viewDidLoad(){
         super.viewDidLoad()
-        
-        AF.request("https://api.vk.com/method/photos.getAll",
-                   parameters: [
-                    "access_token" : Session.shared.token,
-                    "user_id" : Session.shared.userId,
-                    "owner_id" : "0",
-                    "extended" : "1",
-                    "count" : "4",
-                    "no_service_albums" : "0",
-                    "v" : "5.68"
-                   ]).responseJSON {
-                    response in
-                    print(response.value)
-                   }
+    
     }
     
     
@@ -69,5 +57,4 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate, UICollec
             destination.photos = photos
         }
     }
- 
 }

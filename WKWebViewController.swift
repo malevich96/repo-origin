@@ -62,9 +62,15 @@ extension WKWebViewController {
                     dict[key] = value
                     return dict
             }
-
-            Session.shared.token = params["access_token"]!
-            Session.shared.userId = Int(params["user_id"]!)!
+            
+            guard let accessToken = params["access_token"],
+                let userId = params["user_id"] else {
+                decisionHandler(.allow)
+                return
+            }
+            
+            Session.instance.accessToken = accessToken
+            Session.instance.userId = userId
             
             print("token = " + params["access_token"]!)
             print("user = " + params["user_id"]!)
