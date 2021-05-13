@@ -7,61 +7,69 @@
 
 import UIKit
 import Alamofire
+import AlamofireImage
 
-class GroupsTableViewController: UITableViewController {
-    var communitys = [Community]()
-    var selectedCommunity: Community?
+/*
+/class GroupsTableViewController: UITableViewController {
+    var groups = [VKGroup]()
+    var filteredGroups = [VKGroup]() {
+        didSet {
+            tableView.reloadData()
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        AF.request("https://api.vk.com/method/groups.get",
-                   parameters: [
-                    "access_token" : Session.shared.token,
-                    "user_id" : Session.shared.userId,
-                    "extended" : "1",
-                    "fields" : "city, description, members_counts",
-                    "v" : "5.68"
-                   ]).responseJSON {
-                    response in
-                    print(response.value)
-                   }
-}
-    
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        tableView.tableFooterView = UIView()
     }
 
+    // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return communitys.count
+        return filteredGroups.isEmpty ? groups.count : filteredGroups.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! GroupTableViewCell
-        let community = communitys[indexPath.row]
-        cell.titleLabel.text = community.name
-        cell.CommunityPhotosImageView.image = community.image
+        let cell = tableView.dequeueReusableCell(withIdentifier: "GroupsTableViewCell", for: indexPath) as! GroupTableViewCell
+        let group = filteredGroups.isEmpty ? groups[indexPath.row] : filteredGroups[indexPath.row]
+        cell.titleLabel.text = group.name
+        cell.CommunityPhotosImageView.image = UIImage(named: group.avatarImageName)
         return cell
-    }
-    
-    @IBAction func addCommunity(segue: UIStoryboardSegue){
-        if segue.identifier == "addGroup",
-           let sourceVC = segue.source as? AllGroupsTableViewController,
-           let selectedCommunity = sourceVC.selectedCommunity {
-            if !communitys.contains(selectedCommunity){
-            }
-            communitys.append(selectedCommunity)
-            tableView.reloadData()
-        }
-    }
-        override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-            if editingStyle == .delete {
-                communitys.remove(at: indexPath.row)
-                tableView.deleteRows(at: [indexPath], with: .fade)
-         }
     }
 }
 
+extension GroupsTableViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        guard let searchText = searchBar.text, !searchText.isEmpty else {
+            clearSearch(searchBar)
+            return
+        }
+        filteredGroups = groups.filter { $0.name.contains(searchText) }
+    }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchBar.setShowsCancelButton(true, animated: true)
+    }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        searchBar.setShowsCancelButton(false, animated: true)
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        view.endEditing(true)
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        clearSearch(searchBar)
+    }
+    
+    private func clearSearch(_ searchBar: UISearchBar) {
+        searchBar.text = nil
+        view.endEditing(true)
+        filteredGroups = [Group]()
+    }
+}
+
+//}
+*/
 

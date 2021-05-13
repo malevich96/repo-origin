@@ -6,6 +6,6 @@ target 'VK1_App' do
   use_frameworks!
 
   # Pods for VK1_App
-    pod 'Alamofire', '~> 5.4'
-
+    pod 'AlamofireImage', '~> 4.2'
+    pod 'RealmSwift', '10.8.0-beta.1'
 end
