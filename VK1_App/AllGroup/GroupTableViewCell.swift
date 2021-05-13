@@ -11,10 +11,5 @@ class GroupTableViewCell: UITableViewCell {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var CommunityPhotosImageView: UIImageView!
-  
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        titleLabel.text = ""
-    }
 }
 

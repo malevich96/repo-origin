@@ -2,18 +2,18 @@
 //  Session.swift
 //  VK1_App
 //
-//  Created by Анатолий Левин on 21.04.2021.
+//  Created by Анатолий Левин on 29.04.2021.
 //
 
 import Foundation
 
- final class Session {
-   static let shared = Session()
+class Session {
+    static let instance = Session()
     
-   var token = ""
-   var userId = Int()
+    var accessToken: String = ""
+    var userId: String = ""
     
-    private init() {
+    private init() {}
         
     }
-}
+
