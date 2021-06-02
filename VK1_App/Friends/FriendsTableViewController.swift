@@ -8,6 +8,11 @@
 import UIKit
 import Alamofire
 import AlamofireImage
+<<<<<<< Updated upstream
+=======
+import RealmSwift
+
+>>>>>>> Stashed changes
 
 class FriendsTableViewController: UITableViewController  {
     
@@ -28,12 +33,14 @@ class FriendsTableViewController: UITableViewController  {
     
     private var users = [VKUser]()
     private var sectionTitles = [String]()
+    private var token: NotificationToken?
     
     
         override func viewDidLoad() {
             super.viewDidLoad()
             
             
+<<<<<<< Updated upstream
        // let friend = User(name: "Андрей", age: 39, numberOfFollowers: 5, avatarImageName: "image1", imageView: ["images1","images3","images5","images4","images2","images6"])
        // let friend1 = User (name: "Анатолий", age: 9, numberOfFollowers: 5, avatarImageName: "image2", imageView: ["images2","images4","images6"])
        // let friend2 = User(name: "Сергей ", age: 3, numberOfFollowers: 5, avatarImageName: "image3", imageView: ["images1","images2","images3"])
@@ -42,6 +49,8 @@ class FriendsTableViewController: UITableViewController  {
       //  let users = [friend, friend1, friend2,friend3]
       //  configureUserGroups(with: users)
         
+=======
+>>>>>>> Stashed changes
         requestData()
         tableView.tableFooterView = UIView() 
     }
@@ -49,15 +58,59 @@ class FriendsTableViewController: UITableViewController  {
     private func requestData() {
         VKService.instance.loadFriends { result in
             switch result {
+<<<<<<< Updated upstream
             case .success(let users):
                 self.users = users
                 self.configureUserGroups(with: users)
                 self.tableView.reloadData()
             case .failure(let error):
+=======
+            case .success:
+                self.fetchCachedData()
+            case .failure(let error):
+                self.fetchCachedData()
+>>>>>>> Stashed changes
                 print(error)
             }
         }
     }
+<<<<<<< Updated upstream
+=======
+    
+    private func fetchCachedData() {
+        guard let users = RealmService.instance.fetchObjects(VKUser.self) else {
+            return
+        }
+        self.users = users
+        self.configureUserGroups(with: users)
+        self.configureRealmNotifications()
+    }
+    
+    private func configureRealmNotifications() {
+        guard let realm = try? Realm() else { return }
+        token = realm.objects(VKUser.self).observe({ [weak self] changes in
+            switch changes {
+            case .initial:
+                self?.tableView.reloadData()
+            case .update(_,
+                         deletions: let deletions,
+                         insertions: let insertions,
+                         modifications: let modifications):
+                self?.tableView.beginUpdates()
+                self?.tableView.insertRows(at: insertions.map({ IndexPath(row: $0, section: 0) }),
+                                     with: .automatic)
+                self?.tableView.deleteRows(at: deletions.map({ IndexPath(row: $0, section: 0)}),
+                                     with: .automatic)
+                self?.tableView.reloadRows(at: modifications.map({ IndexPath(row: $0, section: 0) }),
+                                     with: .automatic)
+                self?.tableView.endUpdates()
+            case .error(let error):
+                fatalError(error.localizedDescription)
+            }
+        })
+    }
+    
+>>>>>>> Stashed changes
         private func configureUserGroups(with users: [VKUser]) {
             for user in users {
                 let userKey = String(user.lastName.prefix(1))
@@ -131,7 +184,7 @@ class FriendsTableViewController: UITableViewController  {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "segueShowPhotos" {
-            guard let viewController = segue.destination as? PhotosViewController,
+            guard let viewController = segue.destination as? FriendPhotosCollectionViewController,
                   let selectedIndexPath = tableView.indexPathForSelectedRow else {
                 return
             }
@@ -143,7 +196,11 @@ class FriendsTableViewController: UITableViewController  {
             } else {
                 user = filteredUsers[selectedIndexPath.row]
             }
+<<<<<<< Updated upstream
             viewController.user = user
+=======
+            viewController.userId = user?.userId ?? 1
+>>>>>>> Stashed changes
         }
     }
 }

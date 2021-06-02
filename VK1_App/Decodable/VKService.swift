@@ -8,13 +8,25 @@
 import Foundation
 import Alamofire
 import AlamofireImage
+<<<<<<< Updated upstream
+=======
+import RealmSwift
+>>>>>>> Stashed changes
 
 class VKService {
     static let instance = VKService()
     
+<<<<<<< Updated upstream
     private let baseUrl = "https://api.vk.com/method/"
     private let apiVersion = "5.68"
     private let accessToken = Session.instance.accessToken
+=======
+
+    
+    private let baseUrl = "https://api.vk.com/method/"
+    private let apiVersion = "5.68"
+    private let accessToken = VKSession.instance.accessToken
+>>>>>>> Stashed changes
     private lazy var commonParameters = [
         "access_token" : accessToken,
         "v" : apiVersion
@@ -42,6 +54,11 @@ class VKService {
                 let decoder = JSONDecoder()
                 do {
                     let requestResponse = try decoder.decode(VKUserRequestResponse.self,from: data)
+<<<<<<< Updated upstream
+=======
+                    RealmService.instance.deleteObjects(VKUser.self)
+                    RealmService.instance.saveObjects(requestResponse.response.items)
+>>>>>>> Stashed changes
                     handler(.success(requestResponse.response.items))
                 } catch {
                     handler(.failure(error))
@@ -49,6 +66,10 @@ class VKService {
             })
     }
     
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
     func loadPhotos(userId: Int,
                     handler: @escaping (Result<[VKPhoto], Error>) -> Void)  {
         let apiMethod = "photos.getAll"
@@ -76,6 +97,11 @@ class VKService {
                 let decoder = JSONDecoder()
                 do {
                     let requestResponse = try decoder.decode(VKPhotoRequestResponse.self,from: data)
+<<<<<<< Updated upstream
+=======
+                    RealmService.instance.deleteObjects(VKPhoto.self)
+                    RealmService.instance.saveObjects(requestResponse.response.items)
+>>>>>>> Stashed changes
                     handler(.success(requestResponse.response.items))
                 } catch {
                     handler(.failure(error))
@@ -106,7 +132,13 @@ class VKService {
 
                 let decoder = JSONDecoder()
                 do {
+<<<<<<< Updated upstream
                     let requestResponse = try decoder.decode(GroupssResponce.self,from: data)
+=======
+                    let requestResponse = try decoder.decode(GroupsResponce.self,from: data)
+                    RealmService.instance.deleteObjects(VKGroup.self)
+                    RealmService.instance.saveObjects(requestResponse.response.items)
+>>>>>>> Stashed changes
                     handler(.success(requestResponse.response.items))
                 } catch {
                     handler(.failure(error))
@@ -114,7 +146,12 @@ class VKService {
             })
     } 
     
+<<<<<<< Updated upstream
     func searchGroups(searchQuery: String,handler: @escaping (Result<[String: Any]?, Error>) -> Void) {
+=======
+    func searchGroups(searchQuery: String,
+                      handler: @escaping (Result<[VKGroup], Error>) -> Void) {
+>>>>>>> Stashed changes
         let apiMethod = "groups.search"
         let apiEndpoint = baseUrl + apiMethod
         let requestParameters = [
@@ -122,6 +159,7 @@ class VKService {
             "v" : apiVersion,
             "q": searchQuery
         ]
+<<<<<<< Updated upstream
         AF.request(apiEndpoint,method: .get, parameters: requestParameters)
             .validate()
             .responseJSON { responseData in
@@ -138,3 +176,25 @@ class VKService {
         }
     }
 }
+=======
+        AF.request(apiEndpoint,
+                   method: .get,
+                   parameters: requestParameters)
+            .validate()
+            .responseData(completionHandler: { responseData in
+                         guard let data = responseData.data else {
+                           //  handler(.failure(VKAPIError.error("Data error")))
+                             return
+                         }
+                         let decoder = JSONDecoder()
+                         do {
+                             let requestResponse = try
+                                 decoder.decode(GroupsResponce.self, from: data)
+                             handler(.success(requestResponse.response.items))
+                         } catch {
+                             handler(.failure(error))
+                }
+            })
+        }
+    }
+>>>>>>> Stashed changes

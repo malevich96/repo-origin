@@ -55,7 +55,7 @@
                         <outlet property="dotOne" destination="zor-aV-CJa" id="mdA-ar-Biu"/>
                         <outlet property="dotThree" destination="arC-wn-Du5" id="VkY-fF-xKt"/>
                         <outlet property="dotTwo" destination="zOh-si-nPJ" id="7Sp-57-IPD"/>
-                        <segue destination="Diu-TF-v9e" kind="show" identifier="login" id="xnV-iD-YWd"/>
+                        <segue destination="Diu-TF-v9e" kind="showDetail" identifier="login" id="KR2-kv-R4w"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="35Q-I3-ZrF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -384,7 +384,11 @@
         <scene sceneID="H2w-I2-B3i">
             <objects>
                 <tableViewController id="Wrx-Hv-Si3" customClass="AllGroupsTableViewController" customModule="VK1_App" customModuleProvider="target" sceneMemberID="viewController">
+<<<<<<< Updated upstream
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="65" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="IUn-PA-fzg">
+=======
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="89" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="IUn-PA-fzg">
+>>>>>>> Stashed changes
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -394,29 +398,33 @@
                             <textInputTraits key="textInputTraits"/>
                         </searchBar>
                         <prototypes>
+<<<<<<< Updated upstream
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationWidth="10" reuseIdentifier="GroupTableViewCell" rowHeight="65" id="Dz1-4n-tPS" customClass="GroupTableViewCell" customModule="VK1_App" customModuleProvider="target">
+=======
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationWidth="10" reuseIdentifier="GroupTableViewCell" rowHeight="65" id="WSE-9b-jqP" customClass="GroupTableViewCell" customModule="VK1_App" customModuleProvider="target">
+>>>>>>> Stashed changes
                                 <rect key="frame" x="0.0" y="72" width="414" height="65"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Dz1-4n-tPS" id="OY7-lb-yY0">
-                                    <rect key="frame" x="0.0" y="0.0" width="383" height="65"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WSE-9b-jqP" id="tb3-ui-VqT">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="65"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="ecC-gt-3r0" customClass="ViewWithShadow" customModule="VK1_App" customModuleProvider="target">
+                                        <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="GK7-tJ-Ovg" customClass="ViewWithShadow" customModule="VK1_App" customModuleProvider="target">
                                             <rect key="frame" x="8" y="2" width="61" height="61"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="news" translatesAutoresizingMaskIntoConstraints="NO" id="MbY-Ir-L7Z" customClass="AvatarImageView" customModule="VK1_App" customModuleProvider="target">
+                                                <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="news" translatesAutoresizingMaskIntoConstraints="NO" id="ZYL-Re-1x8" customClass="AvatarImageView" customModule="VK1_App" customModuleProvider="target">
                                                     <rect key="frame" x="2" y="2" width="54" height="54"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" secondItem="MbY-Ir-L7Z" secondAttribute="height" multiplier="1:1" id="y7X-QL-JM4"/>
+                                                        <constraint firstAttribute="width" secondItem="ZYL-Re-1x8" secondAttribute="height" multiplier="1:1" id="Dgn-Vn-ZbM"/>
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="MbY-Ir-L7Z" secondAttribute="bottom" constant="5" id="9Fq-7e-BBo"/>
-                                                <constraint firstItem="MbY-Ir-L7Z" firstAttribute="leading" secondItem="ecC-gt-3r0" secondAttribute="leading" constant="2" id="DMO-Bm-P1L"/>
-                                                <constraint firstAttribute="width" secondItem="ecC-gt-3r0" secondAttribute="height" multiplier="1:1" id="PqG-nU-lMM"/>
-                                                <constraint firstItem="MbY-Ir-L7Z" firstAttribute="top" secondItem="ecC-gt-3r0" secondAttribute="top" constant="2" id="xZO-Oh-sMG"/>
+                                                <constraint firstAttribute="width" secondItem="GK7-tJ-Ovg" secondAttribute="height" multiplier="1:1" id="AZ7-2B-ZB6"/>
+                                                <constraint firstItem="ZYL-Re-1x8" firstAttribute="top" secondItem="GK7-tJ-Ovg" secondAttribute="top" constant="2" id="FAV-Ew-CWz"/>
+                                                <constraint firstItem="ZYL-Re-1x8" firstAttribute="leading" secondItem="GK7-tJ-Ovg" secondAttribute="leading" constant="2" id="cpc-Ae-kB2"/>
+                                                <constraint firstAttribute="bottom" secondItem="ZYL-Re-1x8" secondAttribute="bottom" constant="5" id="uOQ-o2-w4l"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
@@ -433,25 +441,30 @@
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </view>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Группы" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J8X-oL-E7K">
-                                            <rect key="frame" x="79" y="19" width="58.5" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Группы" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xof-Cu-pRY">
+                                            <rect key="frame" x="79" y="20" width="58.5" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.91074907780000003" green="0.65308398619999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="ecC-gt-3r0" firstAttribute="top" secondItem="OY7-lb-yY0" secondAttribute="top" constant="2" id="AFO-Jq-fuG"/>
-                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="J8X-oL-E7K" secondAttribute="trailing" constant="20" symbolic="YES" id="AV9-wI-O2k"/>
-                                        <constraint firstItem="ecC-gt-3r0" firstAttribute="leading" secondItem="OY7-lb-yY0" secondAttribute="leading" constant="8" id="FHa-Nj-PiY"/>
-                                        <constraint firstAttribute="bottom" secondItem="ecC-gt-3r0" secondAttribute="bottom" constant="2" id="SxG-mR-XOx"/>
-                                        <constraint firstItem="J8X-oL-E7K" firstAttribute="leading" secondItem="ecC-gt-3r0" secondAttribute="trailing" constant="10" id="XR0-wF-132"/>
-                                        <constraint firstItem="J8X-oL-E7K" firstAttribute="top" secondItem="OY7-lb-yY0" secondAttribute="top" constant="19" id="j0V-6l-4qL"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="xof-Cu-pRY" secondAttribute="trailing" constant="20" symbolic="YES" id="532-Fk-CYn"/>
+                                        <constraint firstItem="xof-Cu-pRY" firstAttribute="top" secondItem="tb3-ui-VqT" secondAttribute="top" constant="20" id="9yA-sI-THq"/>
+                                        <constraint firstAttribute="bottom" secondItem="GK7-tJ-Ovg" secondAttribute="bottom" constant="2" id="MWh-ye-siC"/>
+                                        <constraint firstItem="GK7-tJ-Ovg" firstAttribute="top" secondItem="tb3-ui-VqT" secondAttribute="top" constant="2" id="bT3-FS-y5j"/>
+                                        <constraint firstItem="xof-Cu-pRY" firstAttribute="leading" secondItem="GK7-tJ-Ovg" secondAttribute="trailing" constant="10" id="mb5-kI-hmY"/>
+                                        <constraint firstItem="GK7-tJ-Ovg" firstAttribute="leading" secondItem="tb3-ui-VqT" secondAttribute="leading" constant="8" id="q2u-D2-PjV"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+<<<<<<< Updated upstream
                                     <outlet property="CommunityPhotosImageView" destination="MbY-Ir-L7Z" id="1WG-WP-pBM"/>
                                     <outlet property="titleLabel" destination="J8X-oL-E7K" id="Glt-dE-cFp"/>
+=======
+                                    <outlet property="CommunityPhotosImageView" destination="ZYL-Re-1x8" id="0AY-1l-K6Z"/>
+                                    <outlet property="titleLabel" destination="xof-Cu-pRY" id="l5m-Bz-MTG"/>
+>>>>>>> Stashed changes
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -479,7 +492,11 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d4e-ZJ-nR4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="Jp1-T5-4QO" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
+<<<<<<< Updated upstream
             <point key="canvasLocation" x="3183" y="333"/>
+=======
+            <point key="canvasLocation" x="3182.608695652174" y="332.8125"/>
+>>>>>>> Stashed changes
         </scene>
         <!--Web View Controller-->
         <scene sceneID="xWM-tB-6B1">
@@ -510,7 +527,7 @@
                     <navigationItem key="navigationItem" id="pC4-LF-1zp"/>
                     <connections>
                         <outlet property="webView" destination="Sv7-gi-hTw" id="33c-zq-Uw3"/>
-                        <segue destination="KQn-X0-MmX" kind="show" identifier="login" id="l6P-gy-AuZ"/>
+                        <segue destination="KQn-X0-MmX" kind="presentation" identifier="login" modalPresentationStyle="fullScreen" id="l6P-gy-AuZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Kn-CU-2kS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -528,6 +545,7 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" shadowImage="newspaper.fill" catalog="system" id="oCW-w2-V6G">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.15633758480000001" green="0.3262287237" blue="0.73838875510000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="selectedImageTintColor" systemColor="systemOrangeColor"/>
                     </tabBar>
@@ -567,7 +585,7 @@
         <scene sceneID="7cx-gU-7nP">
             <objects>
                 <navigationController id="0cV-Jf-mbC" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Новости" badgeValue="3" selectedImage="newspaper" catalog="system" id="r9l-ze-R6s">
+                    <tabBarItem key="tabBarItem" title="Новости" badgeValue="3" selectedImage="newspaper.fill" catalog="system" id="r9l-ze-R6s">
                         <color key="badgeColor" red="1" green="0.086986051430000003" blue="0.12188921329999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="xUu-UL-ZxV">
@@ -575,12 +593,16 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="6uw-a7-d1t" kind="relationship" relationship="rootViewController" id="XU7-U2-zYa"/>
+                        <segue destination="6uw-a7-d1t" kind="relationship" relationship="rootViewController" id="cSR-tc-95P"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OVN-MH-u20" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+<<<<<<< Updated upstream
             <point key="canvasLocation" x="1830" y="1088"/>
+=======
+            <point key="canvasLocation" x="1872" y="1088"/>
+>>>>>>> Stashed changes
         </scene>
         <!-- Сообщество-->
         <scene sceneID="79f-us-tBv">
@@ -620,7 +642,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="643"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pic" translatesAutoresizingMaskIntoConstraints="NO" id="tve-bO-70b" customClass="RoundedImageView" customModule="VK1_App" customModuleProvider="target">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="avatarVie" image="pic" translatesAutoresizingMaskIntoConstraints="NO" id="tve-bO-70b" userLabel="avatarView" customClass="RoundedImageView" customModule="VK1_App" customModuleProvider="target">
                                             <rect key="frame" x="28" y="10" width="60" height="60"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="60" id="Dtj-VU-ZoZ"/>
@@ -633,26 +655,26 @@
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="12" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3hi-Tc-LXc">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="12" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3hi-Tc-LXc" userLabel="titleLabel">
                                             <rect key="frame" x="28" y="80" width="358" height="116"/>
                                             <string key="text">Ваша работа заполнит большую часть жизни и единственный способ быть полностью довольным – делать то, что по-вашему является великим делом. И единственный способ делать великие дела – любить то, что вы делаете.</string>
                                             <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Стив Джобс" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wX3-iA-uIC">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Стив Джобс" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wX3-iA-uIC" userLabel="labelCreator">
                                             <rect key="frame" x="101" y="22" width="285" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Сегодня 20:01" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QCg-H0-YAx">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Сегодня 20:01" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QCg-H0-YAx" userLabel="dateLabel">
                                             <rect key="frame" x="102" y="46.5" width="284" height="14.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="news" translatesAutoresizingMaskIntoConstraints="NO" id="b7r-Nh-gap">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="news" translatesAutoresizingMaskIntoConstraints="NO" id="b7r-Nh-gap" userLabel="photoView">
                                             <rect key="frame" x="28" y="210" width="358" height="358"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="b7r-Nh-gap" secondAttribute="height" id="NrP-n0-cwI"/>
@@ -712,11 +734,10 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="authorLable" destination="wX3-iA-uIC" id="ULR-Kk-Wgy"/>
-                                    <outlet property="avatarImageView" destination="tve-bO-70b" id="f3f-ib-m6B"/>
-                                    <outlet property="postImageView" destination="b7r-Nh-gap" id="a8h-iU-1xp"/>
-                                    <outlet property="postLabel" destination="3hi-Tc-LXc" id="bVD-B5-o0i"/>
-                                    <outlet property="timeLable" destination="QCg-H0-YAx" id="Tgb-9c-Tzf"/>
+                                    <outlet property="authorLable" destination="wX3-iA-uIC" id="rgD-mq-vv7"/>
+                                    <outlet property="avatarImageView" destination="tve-bO-70b" id="P6Y-Y1-GlG"/>
+                                    <outlet property="postImageView" destination="b7r-Nh-gap" id="R8T-GE-ywx"/>
+                                    <outlet property="postLabel" destination="3hi-Tc-LXc" id="6L4-sr-MYW"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -732,13 +753,21 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qhO-jh-vyy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+<<<<<<< Updated upstream
             <point key="canvasLocation" x="2980" y="1088"/>
+=======
+            <point key="canvasLocation" x="2711.594202898551" y="1087.5"/>
+>>>>>>> Stashed changes
         </scene>
         <!--AllGroups-->
         <scene sceneID="ZbY-E6-QMC">
             <objects>
                 <tableViewController id="7wh-tl-7bf" customClass="GroupsTableViewController" customModule="VK1_App" customModuleProvider="target" sceneMemberID="viewController">
+<<<<<<< Updated upstream
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="62" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="3M1-jQ-qM5">
+=======
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="65" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="3M1-jQ-qM5">
+>>>>>>> Stashed changes
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -815,7 +844,11 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cIy-b1-8nr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+<<<<<<< Updated upstream
             <point key="canvasLocation" x="4025" y="333"/>
+=======
+            <point key="canvasLocation" x="4024.6376811594205" y="332.8125"/>
+>>>>>>> Stashed changes
         </scene>
         <!--Сообщество-->
         <scene sceneID="AGz-5k-yd7">

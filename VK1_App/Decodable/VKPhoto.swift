@@ -6,6 +6,10 @@
 //
 
 import Foundation
+<<<<<<< Updated upstream
+=======
+import RealmSwift
+>>>>>>> Stashed changes
 
 
 struct VKPhotoRequestResponse: Codable {
@@ -16,6 +20,7 @@ struct VKPhotoResponse: Codable {
     let items: [VKPhoto]
 }
 
+<<<<<<< Updated upstream
 struct VKPhoto: Codable {
     var photoId: Int
     var url: String
@@ -25,6 +30,14 @@ extension VKPhoto: CustomStringConvertible {
     var description: String {
         return String(format: "%id (%@)", photoId, url)
    }
+=======
+class VKPhoto: Object, Codable {
+ override var description: String {
+        return String(format: "%id (%@)", photoId, url)
+   }
+    @objc dynamic var photoId: Int
+    @objc dynamic var url: String
+>>>>>>> Stashed changes
 }
 
 extension VKPhoto {

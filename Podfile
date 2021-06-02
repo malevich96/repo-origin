@@ -7,5 +7,10 @@ target 'VK1_App' do
 
   # Pods for VK1_App
     pod 'AlamofireImage', '~> 4.2'
+<<<<<<< Updated upstream
 
+=======
+    pod 'RealmSwift','~> 5.0.0'
+    pod "PromiseKit", "~> 6.8"
+>>>>>>> Stashed changes
 end
