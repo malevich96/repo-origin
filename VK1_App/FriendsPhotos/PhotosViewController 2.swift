@@ -6,10 +6,12 @@
 //
 
 import UIKit
+import Alamofire
+import AlamofireImage
 
 class PhotosViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
    
-    var user: User?
+    var user: VKUser?
     var photos = [UIImage]()
     var selectedIndex = 0
     
@@ -23,7 +25,9 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     override func viewDidLoad(){
         super.viewDidLoad()
+    
     }
+    
     
     func numberOfSections(in colllectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -53,5 +57,4 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate, UICollec
             destination.photos = photos
         }
     }
- 
 }
