@@ -2,9 +2,8 @@
 //  VKSession.swift
 //  VK1_App
 //
-//  Created by Анатолий Левин on 29.04.2021.
+//  Created by Анатолий Левин on 03.06.2021.
 //
-
 
 import Foundation
 
@@ -23,4 +22,3 @@ class VKSession {
         ]
     }
 }
-

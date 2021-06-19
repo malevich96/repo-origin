@@ -2,11 +2,37 @@ PODS:
   - Alamofire (5.4.3)
   - AlamofireImage (4.2.0):
     - Alamofire (~> 5.4)
-<<<<<<< Updated upstream
-
-DEPENDENCIES:
-  - AlamofireImage (~> 4.2)
-=======
+  - Firebase/CoreOnly (8.0.0):
+    - FirebaseCore (= 8.0.0)
+  - Firebase/Database (8.0.0):
+    - Firebase/CoreOnly
+    - FirebaseDatabase (~> 8.0.0)
+  - FirebaseCore (8.0.0):
+    - FirebaseCoreDiagnostics (~> 8.0)
+    - GoogleUtilities/Environment (~> 7.4)
+    - GoogleUtilities/Logger (~> 7.4)
+  - FirebaseCoreDiagnostics (8.0.0):
+    - GoogleDataTransport (~> 9.0)
+    - GoogleUtilities/Environment (~> 7.4)
+    - GoogleUtilities/Logger (~> 7.4)
+    - nanopb (~> 2.30908.0)
+  - FirebaseDatabase (8.0.0):
+    - FirebaseCore (~> 8.0)
+    - leveldb-library (~> 1.22)
+  - GoogleDataTransport (9.0.0):
+    - GoogleUtilities/Environment (~> 7.2)
+    - nanopb (~> 2.30908.0)
+    - PromisesObjC (~> 1.2)
+  - GoogleUtilities/Environment (7.4.1):
+    - PromisesObjC (~> 1.2)
+  - GoogleUtilities/Logger (7.4.1):
+    - GoogleUtilities/Environment
+  - leveldb-library (1.22.1)
+  - nanopb (2.30908.0):
+    - nanopb/decode (= 2.30908.0)
+    - nanopb/encode (= 2.30908.0)
+  - nanopb/decode (2.30908.0)
+  - nanopb/encode (2.30908.0)
   - PromiseKit (6.15.3):
     - PromiseKit/CorePromise (= 6.15.3)
     - PromiseKit/Foundation (= 6.15.3)
@@ -16,6 +42,7 @@ DEPENDENCIES:
     - PromiseKit/CorePromise
   - PromiseKit/UIKit (6.15.3):
     - PromiseKit/CorePromise
+  - PromisesObjC (1.2.12)
   - Realm (5.0.3):
     - Realm/Headers (= 5.0.3)
   - Realm/Headers (5.0.3)
@@ -23,34 +50,45 @@ DEPENDENCIES:
     - Realm (= 5.0.3)
 
 DEPENDENCIES:
+  - Alamofire (~> 5.4)
   - AlamofireImage (~> 4.2)
-  - PromiseKit (~> 6.8)
+  - Firebase/Database
+  - PromiseKit (~> 6.15)
   - RealmSwift (~> 5.0.0)
->>>>>>> Stashed changes
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - AlamofireImage
-<<<<<<< Updated upstream
-=======
+    - Firebase
+    - FirebaseCore
+    - FirebaseCoreDiagnostics
+    - FirebaseDatabase
+    - GoogleDataTransport
+    - GoogleUtilities
+    - leveldb-library
+    - nanopb
     - PromiseKit
+    - PromisesObjC
     - Realm
     - RealmSwift
->>>>>>> Stashed changes
 
 SPEC CHECKSUMS:
   Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
   AlamofireImage: 34a2d90b0e5fe6a5605f85ae4b7b01e784c60192
-<<<<<<< Updated upstream
-
-PODFILE CHECKSUM: 20c99abb4fca557396f2d4f0d1af48b5b76d3a18
-=======
+  Firebase: 73c3e3b216ec1ecbc54d2ffdd4670c65c749edb1
+  FirebaseCore: 3f09591d51292843e2a46f18358d60bf4e996255
+  FirebaseCoreDiagnostics: a31d987ba0fe16d59886a5dbadc2f1de871f88c8
+  FirebaseDatabase: 363961e25451425be8b14bb8801a592515ec58f2
+  GoogleDataTransport: 11e3a5f2c190327df1a4a5d7e7ae3d4d5b9c9e4c
+  GoogleUtilities: f8a43108b38a68eebe8b3540e1f4f2d28843ce20
+  leveldb-library: 50c7b45cbd7bf543c81a468fe557a16ae3db8729
+  nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
   PromiseKit: 3b2b6995e51a954c46dbc550ce3da44fbfb563c5
+  PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
   Realm: bfca1699b61b0b17c3a69ae0e648314eae91fbdb
   RealmSwift: 493c9f089cd3893b3959007973c0e4f640906ba0
 
-PODFILE CHECKSUM: 32092ad671e04e63c59da2d6d0914003f274c7b6
->>>>>>> Stashed changes
+PODFILE CHECKSUM: 1d2f981246eb2adeb00414c392d685ff8fef9c18
 
 COCOAPODS: 1.10.1

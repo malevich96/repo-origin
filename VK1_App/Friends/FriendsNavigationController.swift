@@ -2,9 +2,11 @@
 //  FriendsNavigationController.swift
 //  VK1_App
 //
-//  Created by Анатолий Левин on 16.04.2021.
+//  Created by Анатолий Левин on 03.06.2021.
 //
 
+import Foundation
+ 
 import UIKit
 
 class FriendsNavigationController: UINavigationController {
@@ -187,3 +189,4 @@ class CustomInteractiveTransition: UIPercentDrivenInteractiveTransition {
         }
     }
 }
+

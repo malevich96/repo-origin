@@ -8,11 +8,8 @@
 import UIKit
 import Alamofire
 import AlamofireImage
-<<<<<<< Updated upstream
-=======
 import RealmSwift
 
->>>>>>> Stashed changes
 
 class FriendsTableViewController: UITableViewController  {
     
@@ -39,43 +36,21 @@ class FriendsTableViewController: UITableViewController  {
         override func viewDidLoad() {
             super.viewDidLoad()
             
-            
-<<<<<<< Updated upstream
-       // let friend = User(name: "Андрей", age: 39, numberOfFollowers: 5, avatarImageName: "image1", imageView: ["images1","images3","images5","images4","images2","images6"])
-       // let friend1 = User (name: "Анатолий", age: 9, numberOfFollowers: 5, avatarImageName: "image2", imageView: ["images2","images4","images6"])
-       // let friend2 = User(name: "Сергей ", age: 3, numberOfFollowers: 5, avatarImageName: "image3", imageView: ["images1","images2","images3"])
-      //  let friend3 = User(name: "Игорь", age: 2, numberOfFollowers: 8, avatarImageName: "image4", imageView: ["images4","images5","images6"])
-       
-      //  let users = [friend, friend1, friend2,friend3]
-      //  configureUserGroups(with: users)
-        
-=======
->>>>>>> Stashed changes
         requestData()
-        tableView.tableFooterView = UIView() 
+        tableView.tableFooterView = UIView()
     }
     
     private func requestData() {
-        VKService.instance.loadFriends { result in
-            switch result {
-<<<<<<< Updated upstream
-            case .success(let users):
-                self.users = users
-                self.configureUserGroups(with: users)
-                self.tableView.reloadData()
-            case .failure(let error):
-=======
-            case .success:
-                self.fetchCachedData()
-            case .failure(let error):
-                self.fetchCachedData()
->>>>>>> Stashed changes
-                print(error)
+            VKService.instance.loadFriends { result in
+                switch result {
+                case .success:
+                    self.fetchCachedData()
+                case .failure(let error):
+                    self.fetchCachedData()
+                    print(error)
+                }
             }
         }
-    }
-<<<<<<< Updated upstream
-=======
     
     private func fetchCachedData() {
         guard let users = RealmService.instance.fetchObjects(VKUser.self) else {
@@ -86,7 +61,7 @@ class FriendsTableViewController: UITableViewController  {
         self.configureRealmNotifications()
     }
     
-    private func configureRealmNotifications() {
+     private func configureRealmNotifications() {
         guard let realm = try? Realm() else { return }
         token = realm.objects(VKUser.self).observe({ [weak self] changes in
             switch changes {
@@ -109,8 +84,6 @@ class FriendsTableViewController: UITableViewController  {
             }
         })
     }
-    
->>>>>>> Stashed changes
         private func configureUserGroups(with users: [VKUser]) {
             for user in users {
                 let userKey = String(user.lastName.prefix(1))
@@ -127,7 +100,6 @@ class FriendsTableViewController: UITableViewController  {
         
         
         // MARK: - Table view data source
-
         override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
             return filteredUsers.isEmpty ? sectionTitles : nil
         }
@@ -196,17 +168,13 @@ class FriendsTableViewController: UITableViewController  {
             } else {
                 user = filteredUsers[selectedIndexPath.row]
             }
-<<<<<<< Updated upstream
-            viewController.user = user
-=======
             viewController.userId = user?.userId ?? 1
->>>>>>> Stashed changes
+
         }
     }
 }
 
 //  MARK: - Segues
-
 extension FriendsTableViewController : UISearchBarDelegate {
     func searchBar(_ searhBar: UISearchBar,textDidChange serchText: String ){
         guard let searchText = searhBar.text, !searchText.isEmpty else {
