@@ -6,11 +6,10 @@ target 'VK1_App' do
   use_frameworks!
 
   # Pods for VK1_App
-    pod 'AlamofireImage', '~> 4.2'
-<<<<<<< Updated upstream
+     pod 'Firebase/Database'
+     pod 'RealmSwift', '~> 5.0.0'
+     pod 'PromiseKit', '~> 6.15'
+     pod 'Alamofire', '~> 5.4'
+     pod 'AlamofireImage', '~> 4.2'
 
-=======
-    pod 'RealmSwift','~> 5.0.0'
-    pod "PromiseKit", "~> 6.8"
->>>>>>> Stashed changes
 end
